@@ -1,0 +1,3 @@
+web: rails s -p $PORT -e $RACK_ENV
+smtp: mailcatcher -f
+memcached: memcached
