@@ -1,6 +1,6 @@
 class CreateSettings < ActiveRecord::Migration[5.2]
   def self.up
-    create_table :settings do |t|
+    create_table :neutron_settings do |t|
       t.string  :var,        null: false
       t.text    :value,      null: true
       t.integer :thing_id,   null: true
@@ -8,10 +8,10 @@ class CreateSettings < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_index :settings, %i(thing_type thing_id var), unique: true
+    add_index :neutron_settings, %i(thing_type thing_id var), unique: true
   end
 
   def self.down
-    drop_table :settings
+    drop_table :neutron_settings
   end
 end
