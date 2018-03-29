@@ -1,0 +1,14 @@
+<% breadcrumb :add_staff_member %>
+
+<div class="p-6">
+  <div class="mb-6 flex justify-between items-center">
+    <h2><%= t '.page_header' %></h2>
+
+    <%= link_to admin_staff_members_path, class: 'btn btn-primary' do %>
+      <i class="fas fa-angle-left mr-1" data-fa-transform="grow-1"></i>
+      <%= t('.back') %>
+    <% end %>
+  </div>
+
+  <%= render "#{Config['authentication_class'].underscore}_form" %>
+</div>

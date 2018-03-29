@@ -1,0 +1,50 @@
+// 0291f4
+
+.btn[disabled] { @apply .cursor-default }
+
+.btn {
+  @apply .bg-grey .text-sm .py-3 .px-4 .rounded .text-white .inline-block .no-underline .font-semibold .tracking-wide;
+
+  &:not([disabled]):hover {
+    @apply .bg-grey-dark .cursor-pointer;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.btn-primary {
+  @apply .bg-primary .text-white;
+
+  &:not([disabled]):hover {
+    background-color: darken(#0291f4, 10%);
+  }
+
+  &:active {
+    background-color: darken(#0291f4, 15%);
+  }
+}
+
+.btn-danger {
+  @apply .bg-red .text-white;
+
+  &:not([disabled]):hover { @apply .bg-red-dark }
+  &:active { @apply .bg-red-darker }
+}
+
+.btn-block {
+  @apply .w-full;
+}
+
+.btn-sm {
+  @apply .py-3 .px-4 .text-xs; 
+}
+
+.btn-plain {
+  @apply .bg-white .text-grey-darkest .text-shadow-none .font-semibold;
+
+  &:hover {
+    @apply .bg-grey-light .text-white .text-shadow;
+  }
+}

@@ -149,6 +149,9 @@ pickle-email-*.html
 /node_modules
 /yarn-error.log
 /public/assets_test/*
+/public/packs/*
+/public/packs-test/*
+/config/app.yml
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb

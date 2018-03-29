@@ -1,0 +1,22 @@
+.sidebar {
+  @apply .flex-none .w-1/6 .bg-grey-lighter .border-r .border-grey-light .pt-24;
+
+  .sidebar-header { @apply .pl-3 .text-grey-dark .mb-2 }
+
+  .sidebar-nav {
+    @apply .list-reset .mb-4;
+
+    .sidebar-item { @apply .px-6 }
+    .sidebar-item:hover { @apply .bg-grey-light }
+
+    .sidebar-item.active {
+      @apply .bg-primary;
+
+      .sidebar-link { @apply .text-white }
+    }
+
+    .sidebar-item.active:hover { @apply .bg-primary }
+    .sidebar-link { @apply .py-3 .font-sans .inline-block .no-underline .text-grey-darker .w-full .text-sm }
+    .sidebar-link .svg-inline--fa { @apply .mr-1 }
+  }
+}

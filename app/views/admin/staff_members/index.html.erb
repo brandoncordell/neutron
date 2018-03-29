@@ -1,0 +1,73 @@
+<% breadcrumb :staff_members %>
+
+<div class="p-6">
+  <div class="mb-6 flex justify-between items-center">
+    <h2><%= t '.page_header' %></h2>
+
+    <%= link_to t('.add_staff_member'), new_admin_staff_member_path, class: 'btn btn-primary' %>
+  </div>
+
+  <table id="staff_members" data-provides="datatable" data-datatable-has-actions="true">
+    <thead>
+      <tr>
+        <th><%= t '.table_headers.first_name' %></th>
+        <th><%= t '.table_headers.last_name' %></th>
+        <th><%= t '.table_headers.email' %></th>
+        <th><%= t '.table_headers.phone_number' %></th>
+        <th><%= t '.table_headers.windows_username' %></th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if @staff_members.any? %>
+        <% @staff_members.each do |staff_member| %>
+          <tr>
+            <td><%= staff_member.first_name %></td>
+            <td><%= staff_member.last_name %></td>
+            <td><%= staff_member.email %></td>
+            <td><%= staff_member.phone_number %></td>
+            <td><%= staff_member.windows_username %></td>
+            <td class="actions">
+              <button class="btn btn-sm btn-primary" data-jq-dropdown="#edit-staff-member-<%= staff_member.id %>">
+                Actions
+
+                <i class="fas fa-caret-down"></i>
+              </button>
+
+
+              <div id="edit-staff-member-<%= staff_member.id %>" class="jq-dropdown jq-dropdown-anchor-right">
+                <ul class="jq-dropdown-menu">
+                  <li>
+                    <%= link_to edit_admin_staff_member_path(staff_member) do %>
+                      <i class="far fa-edit fa-fw mr-1"></i>
+                      Edit Staff Member
+                    <% end %>
+                  </li>
+
+                  <li class="jq-dropdown-divider"></li>
+
+                  <li class="delete-staff-member">
+                    <% if staff_member.id == current_user.id %>
+                      <a class="disabled danger" href="#">
+                        <i class="far fa-trash-alt fa-fw mr-1"></i>
+                        Delete
+                      </a>
+                    <% else %>
+                      <%= link_to admin_staff_member_path(staff_member), class: 'danger', method: :delete, data: { confirm: "Are you sure you want to delete #{staff_member.full_name}'s account?" } do %>
+                        <i class="far fa-trash-alt fa-fw mr-1"></i>
+                        Delete
+                      <% end %>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <td colspan="4"><%= t '.empty_table' %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

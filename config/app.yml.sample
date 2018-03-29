@@ -1,0 +1,20 @@
+# config/app.yml for rails-settings-cached
+defaults: &defaults
+  domain: FIX-ME
+
+  ldap:
+    host: FIX-ME
+    password: FIX-ME
+    port: 389
+    username: administrator
+
+development:
+  <<: *defaults
+  authentication_class: LdapAuthenticator # can also be PasswordAuthenticator
+
+test:
+  <<: *defaults
+  authentication_class: PasswordAuthenticator
+
+production:
+  <<: *defaults

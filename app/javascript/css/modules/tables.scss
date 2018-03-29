@@ -1,0 +1,117 @@
+table {
+  @apply .w-full;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead { @apply .text-grey-dark .text-xs .uppercase .tracking-wide }
+  tbody { @apply .text-grey-darkest .text-sm }
+  thead th,
+  tbody td { @apply .px-2 .py-4 .text-left }
+
+  th.actions,
+  td.actions { width: 89px !important }
+
+  td.actions {
+    .btn {
+      @apply .p-2;
+
+      .svg-inline--fa { @apply .ml-1 }
+    }
+
+    .jq-dropdown-menu a { @apply .text-xs }
+  }
+}
+
+.dataTables_wrapper table tr { @apply .cursor-pointer }
+.dataTables_wrapper table tr.odd { @apply .bg-grey-lightest }
+.dataTables_wrapper table td.dataTables_empty { @apply .text-center }
+
+.dataTables_wrapper table tr.even td.sorting_1 { @apply .bg-grey-lightest }
+.dataTables_wrapper table tr.odd td.sorting_1 { @apply .bg-grey-lighter }
+
+.dataTables_length label,
+.dataTables_filter label,
+.dataTables_paginate {
+  @apply .text-grey-darkest .text-sm;
+}
+
+.dataTables_info { @apply .text-grey-darker .text-sm }
+.dataTables_filter label { @apply .inline-block }
+.dataTables_filter input {
+  @apply .appearance-none .border .rounded .py-1 .px-2 .text-grey-darker .inline-block .ml-3;
+}
+
+.dataTables_paginate {
+  .previous { @apply .mr-2 }
+  .next { @apply .ml-2 }
+  .disabled { @apply .text-grey }
+
+  a:not(.disabled):hover { @apply .cursor-pointer .text-primary }
+  span a:not(.disabled) { @apply .bg-grey-light .py-1 .px-2 .mx-1/2 .text-grey-darkest .rounded-sm }
+
+  span a:not(.disabled):hover,
+  span a.current {
+    @apply .bg-primary .text-white;
+  }
+}
+
+/*!
+ * DataTables + Font Awesome integration
+ * License: MIT - http://datatables.net/license
+ */
+
+/*
+ * Sort styling
+ */
+table.dataTable thead th {
+  position: relative;
+  background-image: none !important; /* Remove the DataTables bootstrap integration styling */
+}
+
+table.dataTable thead th.sorting_disabled {
+  cursor: default;
+}
+
+table.dataTable thead th.sorting:after {
+  position: absolute;
+  top: 14px;
+  right: 9px;
+  display: block;
+  font-family: "fontello";
+}
+
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+  position: absolute;
+  top: 16px;
+  right: 9px;
+  display: block;
+  font-family: "fontello";
+}
+
+table.dataTable thead th.sorting:after {
+  content: "\e800";
+  color: #ddd;
+  font-size: 0.8em;
+  padding-top: 0.12em;
+}
+table.dataTable thead th.sorting_asc:after {
+  content: "\e801";
+}
+table.dataTable thead th.sorting_desc:after {
+  content: "\e802";
+}
+
+div.dataTables_scrollBody table.dataTable thead th.sorting:after,
+div.dataTables_scrollBody table.dataTable thead th.sorting_asc:after,
+div.dataTables_scrollBody table.dataTable thead th.sorting_desc:after {
+  content: "";
+}
+
+/* In Bootstrap and Foundation the padding top is a little different from the DataTables stylesheet */
+table.table thead th.sorting:after,
+table.table thead th.sorting_asc:after,
+table.table thead th.sorting_desc:after {
+  top: 8px;
+}

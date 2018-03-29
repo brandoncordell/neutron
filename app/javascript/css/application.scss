@@ -1,0 +1,17 @@
+@tailwind preflight;
+@tailwind utilities;
+
+@import 'fontello';
+@import 'vendor/jquery.dropdown';
+
+@import 'utilities/text-shadow';
+
+@import 'modules/buttons';
+@import 'modules/forms';
+@import 'modules/sidebar';
+@import 'modules/tables';
+@import 'modules/nav';
+
+.turbolinks-progress-bar {
+  background-color: #0291f4;
+}

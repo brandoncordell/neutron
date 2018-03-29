@@ -1,0 +1,24 @@
+<div class="flex flex-wrap justify-center h-screen">
+  <div class="w-1/4 mt-32">
+    <%= image_tag 'admin/career-source-pinellas-logo.png', class: 'block mx-auto mb-8' %>    
+
+        <%= form_with url: admin_sign_in_path, class: 'bg-white shadow rounded px-10 py-8 my-4', id: 'new-session-form', html: { novalidate: 'novalidate' }, method: :post do |f| %>
+
+            <div class="mb-8">
+              <%= f.label :username %>
+              <%= f.text_field :username %>
+            </div>
+
+            <div class="mb-8">
+              <%= f.label :password, t('.forgot_password_html'), class: 'flex justify-between' %>
+              <%= f.password_field :password, required: 'required' %>
+            </div>
+
+            <%= f.submit t('sign_in'), class: 'btn btn-block btn-primary' %>
+
+            <div class="flash hidden mt-4 py-2 text-center text-red text-sm"></div>
+        <% end %>
+
+      <%= image_tag 'admin/powered-by-atlas.png', class: 'block mx-auto mt-8' %>
+  </div>
+</div>

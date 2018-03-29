@@ -1,0 +1,29 @@
+<%= simple_form_for([:admin, @staff_member]) do |f| %>
+  <div class="mb-6 <%= (f.error :windows_username) ? 'field_with_errors' : '' %>">
+    <%= f.label :windows_username %>
+
+    <div class="input-group">
+      <%= f.input_field :windows_username, id: 'staff_member_windows_username' %>
+
+      <button type="button" class="btn" data-provides="ldap-search" disabled="disabled">
+        <%= t '.load_user' %>
+      </button>
+    </div>
+    <%= f.error :windows_username %>
+  </div>
+
+  <div class="flex flex-wrap -mx-3">
+    <div class="w-1/2 px-3">
+      <%= f.input :first_name %>
+    </div>
+
+    <div class="w-1/2 px-3">
+      <%= f.input :last_name %>
+    </div>
+  </div>
+
+  <%= f.input :email, placeholder: "@#{Config.domain}" %>
+  <%= f.input :phone_number, input_html: { 'data-inputmask': "'mask': '(999) 999-9999 [Ext 99999999]'" } %>
+
+  <%= f.button :submit %>
+<% end %>

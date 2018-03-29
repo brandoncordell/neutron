@@ -2,10 +2,25 @@
   "name": "atlas",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.8",
+    "@fortawesome/fontawesome-pro-light": "^5.0.8",
+    "@fortawesome/fontawesome-pro-regular": "^5.0.8",
+    "@fortawesome/fontawesome-pro-solid": "^5.0.8",
     "@rails/webpacker": "^3.3.1",
+    "datatables.net": "^1.10.16",
+    "datatables.net-dt": "^1.10.16",
+    "inputmask": "^3.3.11",
+    "jquery": "^3.3.1",
+    "rails-ujs": "^5.1.5",
+    "resolve-url-loader": "^2.3.0",
+    "sweet-dropdown": "^1.0.0",
+    "tailwindcss": "^0.5.1",
+    "turbolinks": "^5.1.1",
     "vue": "^2.5.15",
     "vue-loader": "^14.2.1",
-    "vue-template-compiler": "^2.5.15"
+    "vue-template-compiler": "^2.5.15",
+    "vue-turbolinks": "^2.0.1"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

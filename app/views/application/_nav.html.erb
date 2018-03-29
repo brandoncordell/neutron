@@ -1,0 +1,35 @@
+<nav class="nav">
+  <div class="logo">
+    <%= link_to admin_root_path do %>
+      <%= image_tag 'admin/logo.png' %>
+    <% end %>
+  </div>
+
+  <ul class="navbar-nav">
+    <li class="avatar">
+      <a href="#" data-jq-dropdown="#user-menu">
+        <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=42" />
+      </a>
+
+      <div id="user-menu" class="jq-dropdown jq-dropdown-anchor-right">
+        <ul class="jq-dropdown-menu">
+          <li class="block">
+            <a class="py-3 px-4 no-underline font-semibold text-sm block w-full hover:bg-primary hover:text-white" href="">
+              <i class="far fa-id-badge fa-fw mr-2"></i>
+              My Profile
+            </a>
+          </li>
+
+          <li class="jq-dropdown-divider"></li>
+
+          <li class="block">
+            <%= link_to admin_sign_out_path, method: :delete, class: 'py-3 px-4 no-underline font-semibold text-sm block w-full hover:bg-primary hover:text-white rounded-b' do %>
+              <i class="far fa-sign-out-alt fa-fw mr-2"></i>
+              Log out
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>

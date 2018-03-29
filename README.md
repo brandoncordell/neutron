@@ -1,4 +1,4 @@
-# ATLAS Next
+# ATLAS 4.0 (Codename: Neutron)
 
 > If you're not working on your best idea right now, you're doing it wrong.
 > 

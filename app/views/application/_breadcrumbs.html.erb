@@ -1,0 +1,15 @@
+<div class="w-full bg-white px-6 py-4 text-sm font-light border-b border-grey-lighter">
+  <% breadcrumbs.tap do |links| %>
+    <% if links.any? %>
+      <% links.each do |link| %>
+        <%= link_to link.text, link.url, class: (link.current? ? 'no-underline text-grey-dark' : 'no-underline text-primary text-sm') %>
+
+        <% unless link.current? %>
+          <i class="fal fa-angle-right text-grey mx-1"></i>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= link_to 'Dashboard', admin_root_path, class: 'no-underline text-grey-dark' %>
+    <% end %>
+  <% end %>
+</div>

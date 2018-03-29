@@ -30,4 +30,63 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  admin:
+    dashboard:
+      index:
+        page_header: Dashboard
+
+    roles:
+      index:
+        page_header: Roles
+        add_role: Add Role
+        empty_table: There are currently no roles
+
+        table_headers:
+          name: Name
+          can_view_full_ssn: Can view full SSN
+
+    sessions:
+      new:
+        forgot_password_html: 'Password <a class="text-xxs no-underline font-medium self-center text-primary" href="#">Forgot password?</a>'
+
+    staff_members:
+      index:
+        page_header: Staff Members
+        add_staff_member: Add Staff Member
+        empty_table: There are currently no staff members
+
+        table_headers:
+          first_name: First name
+          last_name: Last name
+          email: Email
+          phone_number: Phone number
+          windows_username: Windows username
+
+      new:
+        page_header: Add Staff Member
+
+      edit:
+        page_header: Edit %{name}
+
+      ldap_authenticator_form:
+        load_user: Load User
+
+  helpers:
+    label:
+      staff_member:
+        windows_username: Windows username
+        first_name: First name
+        last_name: Last name
+        email: Email
+        phone_number: Phone number
+
+    submit:
+      staff_member:
+        create: Add Staff Member
+        update: Update Staff Member
+
+  # one off strings, used globally
+  back: Back
+  close: Close
+  log_out: Log out
+  sign_in: Sign in

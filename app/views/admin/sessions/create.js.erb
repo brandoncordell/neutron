@@ -1,0 +1,9 @@
+flashMessage = document.querySelector('.flash');
+
+if (flashMessage.classList) {
+  flashMessage.classList.remove('hidden')
+} else {
+  flashMessage.className = el.className.replace(new RegExp('(^|\\b)' + 'hidden'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+}
+
+flashMessage.textContent = '<%= j @error %>';

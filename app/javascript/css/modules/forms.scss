@@ -1,0 +1,44 @@
+form {
+  label { @apply .font-semibold .block .mb-2 .text-grey-darker .text-xs .uppercase .tracking-wide }
+}
+
+input[type="email"],
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+  @apply .appearance-none .border .rounded .w-full .py-3 .px-3 .text-grey-darkest;
+}
+
+.field_with_errors {
+  label { @apply .text-red-dark }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="password"] { @apply .border-red-dark }
+
+  .error { @apply .text-red-dark .text-sm .inline-block .mt-2 }
+}
+
+
+input:focus {
+  @apply .border-primary;
+  outline: none !important;
+}
+
+select {
+  @apply .inline-block .appearance-none .bg-white .border .border-grey-light .px-4 .py-2 .rounded;
+
+  &:hover { @apply .border-grey }
+}
+
+.input-group {
+  @apply .inline-flex .w-full .content-center .relative;
+
+  .btn {
+    @apply .absolute .py-2 .px-3;
+
+    right: 0.5rem;
+    top: 0.35rem;
+  }
+}
